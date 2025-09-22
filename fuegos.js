@@ -54,13 +54,14 @@ function animate() {
     ctx.fillStyle = "rgba(0, 0, 0, 0.2)";
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-    fireworks.forEach((p, i) => {
+    for (let i = fireworks.length - 1; i >= 0; i--) {
+        const p = fireworks[i];
         p.update();
         p.draw();
         if (p.alpha <= 0) {
             fireworks.splice(i, 1);
         }
-    });
+    }
 
     requestAnimationFrame(animate);
 }

@@ -7,27 +7,24 @@
     <link rel="stylesheet" href="estilos.css" />
 </head>
 
-<body onclick="document.getElementById('bg-music').play()">
+<body>
 
-    <!-- Música de fondo -->
-    <audio id="bg-music" autoplay loop>
-        <source src="SystemaSolar.mp3" type="audio/mpeg">
+    <!-- Música de fondo sin autoplay -->
+    <audio id="bg-music" loop>
+        <source src="SystemaSolar.mp3" type="audio/mpeg" />
+        Tu navegador no soporta el elemento de audio.
     </audio>
 
-    <!-- (Opcional) Botón para reproducir manualmente -->
-    <button class="music-button" onclick="document.getElementById('bg-music').play()">🎵 Reproducir música</button>
-
+    <!-- Botón claro para reproducir música -->
+    <button class="music-button" onclick="playMusic()">🎵 Reproducir música</button>
 
     <div class="message">
-        <br>
-        <br>
+        <br /><br />
         <span>
-            Buenos días señorita Luisa Huechacona 💛<br>
-            ¡Que tengas un lindo día y una hermosa semana! <br>
+            Buenos días señorita Luisa Huechacona 💛<br />
+            ¡Que tengas un lindo día y una hermosa semana! <br />
             💋
         </span>
-
-
     </div>
 
     <!-- Flor -->
@@ -49,11 +46,18 @@
         <div class="stem"></div>
     </div>
 
-
     <!-- Fuegos artificiales -->
     <canvas id="fireworks"></canvas>
 
     <script src="fuegos.js"></script>
+    <script>
+        function playMusic() {
+            const audio = document.getElementById('bg-music');
+            audio.play();
+            // Ocultar el botón para que no moleste una vez que se inicia la música
+            document.querySelector('.music-button').style.display = 'none';
+        }
+    </script>
 </body>
 
 </html>
