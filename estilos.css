@@ -1,0 +1,200 @@
+body {
+    margin: 0;
+    background: linear-gradient(to top, #000000, #1a1a1a);
+    overflow: hidden;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Mensaje de amor */
+.message {
+    position: absolute;
+    top: 10%;
+    width: 100%;
+    text-align: center;
+    color: #fff8dc;
+    font-size: 2em;
+    animation: fadeIn 3s ease-in-out;
+    z-index: 10;
+}
+
+.message span {
+    display: inline-block;
+    animation: pulse 2s infinite;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        color: #fff8dc;
+    }
+
+    50% {
+        transform: scale(1.1);
+        color: #ffd700;
+    }
+
+    100% {
+        transform: scale(1);
+        color: #fff8dc;
+    }
+}
+
+/* Flor */
+.flower {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: float 4s ease-in-out infinite;
+    z-index: 20;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateX(-50%) translateY(0);
+    }
+
+    50% {
+        transform: translateX(-50%) translateY(-10px);
+    }
+}
+
+.stem {
+    width: 10px;
+    height: 200px;
+    background: #3e8e41;
+    border-radius: 5px;
+}
+
+.sunflower {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    background: #fdd835;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.sunflower::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 60px;
+    height: 60px;
+    background: #6d4c41;
+    border-radius: 50%;
+    z-index: 2;
+}
+
+.petal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 30px;
+    height: 60px;
+    background: #ffeb3b;
+    border-radius: 50%;
+    transform-origin: bottom center;
+    /* Usa la variable --angle para rotar el pétalo */
+    /*transform: rotate(var(--angle, 0deg)) translateY(-50px);*/
+    transform: translate(-50%, -100%) rotate(var(--angle, 0deg)) translateY(-50px);
+    animation: sway 3s ease-in-out infinite;
+}
+
+/* Variables --angle para cada pétalo */
+.petal:nth-of-type(1) {
+    --angle: 0deg;
+}
+
+.petal:nth-of-type(2) {
+    --angle: 30deg;
+}
+
+.petal:nth-of-type(3) {
+    --angle: 60deg;
+}
+
+.petal:nth-of-type(4) {
+    --angle: 90deg;
+}
+
+.petal:nth-of-type(5) {
+    --angle: 120deg;
+}
+
+.petal:nth-of-type(6) {
+    --angle: 150deg;
+}
+
+.petal:nth-of-type(7) {
+    --angle: 180deg;
+}
+
+.petal:nth-of-type(8) {
+    --angle: 210deg;
+}
+
+.petal:nth-of-type(9) {
+    --angle: 240deg;
+}
+
+.petal:nth-of-type(10) {
+    --angle: 270deg;
+}
+
+.petal:nth-of-type(11) {
+    --angle: 300deg;
+}
+
+.petal:nth-of-type(12) {
+    --angle: 330deg;
+}
+
+/*@keyframes sway {
+
+    0%,
+    100% {
+        transform: rotate(var(--angle, 0deg)) scale(1) translateY(-50px);
+    }
+
+    50% {
+        transform: rotate(var(--angle, 0deg)) scale(1.1) translateY(-50px);
+    }
+}*/
+
+@keyframes sway {
+
+    0%,
+    100% {
+        transform: translate(-50%, -100%) rotate(var(--angle, 0deg)) scale(1) translateY(-50px);
+    }
+
+    50% {
+        transform: translate(-50%, -100%) rotate(var(--angle, 0deg)) scale(1.1) translateY(-50px);
+    }
+}
+
+/* Canvas para fuegos artificiales */
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
