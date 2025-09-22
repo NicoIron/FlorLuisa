@@ -7,10 +7,27 @@
     <link rel="stylesheet" href="estilos.css" />
 </head>
 
-<body>
+<body onclick="document.getElementById('bg-music').play()">
+
+    <!-- Música de fondo -->
+    <audio id="bg-music" autoplay loop>
+        <source src="SystemaSolar.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- (Opcional) Botón para reproducir manualmente -->
+    <button class="music-button" onclick="document.getElementById('bg-music').play()">🎵 Reproducir música</button>
+
 
     <div class="message">
-        <span>Que tengas un lindo inicio de Día y una linda semana, Luisa Huechacona 💛</span>
+        <br>
+        <br>
+        <span>
+            Buenos días señorita Luisa Huechacona 💛<br>
+            ¡Que tengas un lindo día y una hermosa semana! <br>
+            💋
+        </span>
+
+
     </div>
 
     <!-- Flor -->
@@ -32,11 +49,11 @@
         <div class="stem"></div>
     </div>
 
+
     <!-- Fuegos artificiales -->
     <canvas id="fireworks"></canvas>
 
     <script src="fuegos.js"></script>
-
 </body>
 
 </html>

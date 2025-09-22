@@ -192,6 +192,26 @@ body {
     }
 }
 
+.music-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    padding: 10px 15px;
+    font-size: 1em;
+    background-color: #ffd700;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s;
+}
+
+.music-button:hover {
+    transform: scale(1.1);
+}
+
+
 /* Canvas para fuegos artificiales */
 canvas {
     position: absolute;
